@@ -1,5 +1,5 @@
 import React from 'react';
-import { useState, useRef } from 'react';
+import { useState, useRef, useEffect } from 'react';
 import Cookies from 'universal-cookie';
 import { useHistory } from 'react-router-dom';
 
@@ -10,6 +10,13 @@ function Login() {
     const userNameRef = useRef("");
     const passwordRef = useRef("");
     const history = useHistory();
+
+    useEffect (() => {
+        const info = cookies.getAll();
+        if(info['username'] && info['password']){
+            history.push('/blogs')
+        }
+    });
 
     const handleSubmit = (e) => {
         e.preventDefault();
