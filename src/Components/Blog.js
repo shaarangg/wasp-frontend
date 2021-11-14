@@ -25,9 +25,9 @@ function Blog() {
 		}
 		getBlogs();
 	}, []);
+
 	if (blogs.length !== 0) {
-		console.log(blogs.length);
-		console.log(blogs);
+
 		return (
 			<div>
 				<h1>Blogs</h1>
@@ -35,8 +35,9 @@ function Blog() {
 				<br />
 				{blogs.map((blog) => {
 					return (
-						<div id={blog.id}>
+						<div key={blog.id}>
 							<h3>{blog.title}</h3>
+                            <p>{blog.content}</p>
 							<hr />
 						</div>
 					);
@@ -44,21 +45,8 @@ function Blog() {
 			</div>
 		);
 	} else {
-		return <div>hello</div>;
+		return <div></div>;
 	}
-	return (
-		<div>
-			<h1>Blogs</h1>
-			<hr />
-			<br />
-			{blogs.map((blog) => {
-				<div id={blog.id}>
-					<h3>{blog.title}</h3>
-					<hr />
-				</div>;
-			})}
-		</div>
-	);
 }
 
 export default Blog;
