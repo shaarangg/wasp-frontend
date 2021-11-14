@@ -7,7 +7,7 @@ import Nav from './Components/Nav';
 function App() {
   return (
     <Router>
-      <div>
+      <div className="App">
         <Nav/>
         <Route exact path="/login" component={Login}/>
         <Route exact path="/blogs" component={Blog}/>
