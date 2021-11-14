@@ -37,13 +37,16 @@ function Blog() {
 			headers: { "Content-Type": "application/json" },
 			body: JSON.stringify(b),
 		};
-		setBlogs((oldBlogs) => {
-			let newBlogs = oldBlogs.push(b);
-			return newBlogs;
+		
+		let res = await fetch("http://localhost:8080/blogs", requestOptions);
+		res = await res.json();
+
+        setBlogs((oldBlogs) => {
+            console.log(oldBlogs)
+            return [...oldBlogs, b]
 		});
-		// let res = await fetch("http://localhost:8080/blogs", requestOptions);
-		// res = await res.json();
-		// window.location.reload(false);
+        titleRef.current.value = "";
+        contentRef.current.value = "";
 	};
 
 	useEffect(() => {
