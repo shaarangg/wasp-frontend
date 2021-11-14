@@ -1,13 +1,18 @@
 import './App.css';
-import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import { BrowserRouter as Router, Route, Switch} from "react-router-dom";
 import Login from './Components/Login';
 import Blog from './Components/Blog';
+import Nav from './Components/Nav';
 
 function App() {
   return (
-    <div>
-      <h1>Have to setup router</h1>
-    </div>
+    <Router>
+      <div>
+        <Nav/>
+        <Route exact path="/login" component={Login}/>
+        <Route exact path="/blogs" component={Blog}/>
+      </div>
+    </Router>
   );
 }
 
