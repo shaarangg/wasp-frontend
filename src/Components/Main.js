@@ -77,12 +77,22 @@ function Main() {
 		return (
 			<main>
 				<h2>No blogs present</h2>
+				<div className="add-blog">
+					<button type="button" className="btn">
+						Add Blog
+					</button>
+				</div>
 			</main>
 		);
 	}
 	return (
 		<main>
 			<Blogs blogs={blogs} />
+			<div className="add-blog">
+				<button type="button" className="btn">
+					Add Blog
+				</button>
+			</div>
 		</main>
 	);
 }

@@ -26,6 +26,13 @@ main {
 .loading {
 	text-align: center;
 }
+.add-blog {
+	text-align: center;
+}
+.btn:hover {
+	background-color: var(--highlight-color-light);
+}
+
 .title {
 	text-align: center;
 	margin-bottom: 3rem;
