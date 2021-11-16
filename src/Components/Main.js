@@ -77,7 +77,6 @@ function Main() {
 		return (
 			<main>
 				<h2>No blogs present</h2>
-				<button className="btn">Add Blogs</button>
 			</main>
 		);
 	}
