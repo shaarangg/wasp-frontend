@@ -37,16 +37,16 @@ function Blog() {
 			headers: { "Content-Type": "application/json" },
 			body: JSON.stringify(b),
 		};
-		
+
 		let res = await fetch("http://localhost:8080/blogs", requestOptions);
 		res = await res.json();
 
-        setBlogs((oldBlogs) => {
-            console.log(oldBlogs)
-            return [...oldBlogs, b]
+		setBlogs((oldBlogs) => {
+			console.log(oldBlogs);
+			return [...oldBlogs, b];
 		});
-        titleRef.current.value = "";
-        contentRef.current.value = "";
+		titleRef.current.value = "";
+		contentRef.current.value = "";
 	};
 
 	useEffect(() => {
@@ -84,7 +84,7 @@ function Blog() {
 			</div>
 		);
 	} else {
-		return <div></div>;
+		return <div>Hello</div>;
 	}
 }
 
