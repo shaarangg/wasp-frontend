@@ -2,7 +2,7 @@ import React from "react";
 import { FaTimes } from "react-icons/fa";
 import { GlobalContext } from "../context";
 function Modal() {
-	const { isModalOpen, closeModal, handleSubmit, titleRef, contentRef } = GlobalContext();
+	const { isModalOpen, closeModal, handleSubmit, titleRef, contentRef, disabled } = GlobalContext();
 	return (
 		<div className={`${isModalOpen ? "modal-overlay show-modal" : "modal-overlay"}`}>
 			<div className="modal-container">
@@ -31,7 +31,7 @@ function Modal() {
 						Add Blog
 					</button>
 				</form>
-				<button className="close-modal-btn" onClick={closeModal}>
+				<button className="close-modal-btn" disabled={disabled} onClick={closeModal}>
 					<FaTimes />
 				</button>
 			</div>

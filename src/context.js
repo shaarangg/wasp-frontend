@@ -12,7 +12,7 @@ export function AppProvider({ children }) {
 	const [name, setName] = useState();
 	const [loading, setLoading] = useState(true);
 	const [isModalOpen, setIsModalOpen] = useState(false);
-
+	const [disabled, setDisabled] = useState(false);
 	const fetchBlogs = async () => {
 		setLoading(true);
 		const requestOptions = {
@@ -32,6 +32,7 @@ export function AppProvider({ children }) {
 
 	const handleSubmit = async (e) => {
 		e.preventDefault();
+		setDisabled(true);
 		let id = (blogs.length + 1).toString();
 		const b = {
 			id: id,
@@ -56,6 +57,7 @@ export function AppProvider({ children }) {
 		});
 		titleRef.current.value = "";
 		contentRef.current.value = "";
+		setDisabled(false);
 		closeModal();
 	};
 
@@ -80,6 +82,7 @@ export function AppProvider({ children }) {
 				name,
 				setName,
 				fetchBlogs,
+				disabled,
 			}}
 		>
 			{children}
