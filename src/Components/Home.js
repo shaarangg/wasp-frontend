@@ -4,7 +4,7 @@ import { useHistory } from "react-router-dom";
 import Loading from "./Loading";
 import Blogs from "./Blogs";
 const cookies = new Cookies();
-function Main() {
+function Home() {
 	const url = "http://localhost:8080/blogs";
 	const history = useHistory();
 	const titleRef = useRef("");
@@ -96,4 +96,4 @@ function Main() {
 		</main>
 	);
 }
-export default Main;
+export default Home;
