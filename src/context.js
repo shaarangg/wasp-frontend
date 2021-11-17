@@ -2,10 +2,10 @@ import React, { useState, useContext, useRef, useEffect } from "react";
 import Cookies from "universal-cookie";
 import { useHistory } from "react-router-dom";
 const AppContext = React.createContext();
-const cookies = new Cookies();
 export function AppProvider({ children }) {
 	const url = "http://localhost:8080/blogs";
 	const history = useHistory();
+	console.log(history);
 	const titleRef = useRef("");
 	const contentRef = useRef("");
 	const [blogs, setBlogs] = useState([]);
@@ -65,15 +65,6 @@ export function AppProvider({ children }) {
 		setIsModalOpen(false);
 	};
 
-	useEffect(() => {
-		const info = cookies.getAll();
-		if (!info["username"] || !info["password"]) {
-			history.push("/login");
-		}
-		setName(info["username"]);
-		fetchBlogs();
-	}, []);
-
 	return (
 		<AppContext.Provider
 			value={{
@@ -85,6 +76,8 @@ export function AppProvider({ children }) {
 				handleSubmit,
 				titleRef,
 				contentRef,
+				setName,
+				fetchBlogs,
 			}}
 		>
 			{children}
