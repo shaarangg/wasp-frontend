@@ -56,6 +56,7 @@ export function AppProvider({ children }) {
 		});
 		titleRef.current.value = "";
 		contentRef.current.value = "";
+		closeModal();
 	};
 
 	const openModal = () => {
@@ -76,6 +77,7 @@ export function AppProvider({ children }) {
 				handleSubmit,
 				titleRef,
 				contentRef,
+				name,
 				setName,
 				fetchBlogs,
 			}}

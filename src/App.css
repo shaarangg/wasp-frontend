@@ -17,6 +17,9 @@
 	justify-content: center;
 	padding: 1rem;
 }
+.user-name {
+	color: var(--highlight-color-light);
+}
 /* Blogs Section */
 main {
 	width: 90vw;

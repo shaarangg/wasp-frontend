@@ -17,6 +17,7 @@
 	margin: 0;
 	padding: 0;
 	box-sizing: border-box;
+	word-wrap: break-word;
 }
 body {
 	font-family: "Lato", sans-serif;
