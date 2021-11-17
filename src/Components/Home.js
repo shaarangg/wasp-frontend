@@ -9,7 +9,7 @@ function Home() {
 			<Main />
 			<Modal />
 			<div className="add-blog">
-				<button type="button" className="btn" onClick={openModal}>
+				<button type="button" className="btn add-blog-btn" onClick={openModal}>
 					Add Blog
 				</button>
 			</div>

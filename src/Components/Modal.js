@@ -28,7 +28,7 @@ function Modal() {
 						rows="20"
 					></textarea>
 					<button type="submit" className="btn modal-btn">
-						Add Blog
+						Submit
 					</button>
 				</form>
 				<button className="close-modal-btn" disabled={disabled} onClick={closeModal}>

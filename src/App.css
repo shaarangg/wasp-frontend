@@ -197,3 +197,9 @@ label {
 .modal-btn {
 	margin-top: 1rem;
 }
+.add-blog-btn {
+	margin: 0;
+}
+.date {
+	color: var(--main-color-dark);
+}

@@ -1,11 +1,7 @@
 import React, { useState, useContext, useRef, useEffect } from "react";
-import Cookies from "universal-cookie";
-import { useHistory } from "react-router-dom";
 const AppContext = React.createContext();
 export function AppProvider({ children }) {
 	const url = "http://localhost:8080/blogs";
-	const history = useHistory();
-	console.log(history);
 	const titleRef = useRef("");
 	const contentRef = useRef("");
 	const [blogs, setBlogs] = useState([]);
@@ -41,7 +37,6 @@ export function AppProvider({ children }) {
 			content: contentRef.current.value,
 		};
 
-		console.log(JSON.stringify(b));
 		const requestOptions = {
 			method: "POST",
 			headers: { "Content-Type": "application/json" },
@@ -51,10 +46,7 @@ export function AppProvider({ children }) {
 		let res = await fetch("http://localhost:8080/blogs", requestOptions);
 		res = await res.json();
 
-		setBlogs((oldBlogs) => {
-			console.log(oldBlogs);
-			return [...oldBlogs, b];
-		});
+		fetchBlogs();
 		titleRef.current.value = "";
 		contentRef.current.value = "";
 		setDisabled(false);

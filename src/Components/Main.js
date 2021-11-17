@@ -31,7 +31,6 @@ function Main() {
 			</main>
 		);
 	}
-
 	return (
 		<main>
 			<Blogs blogs={blogs} />
