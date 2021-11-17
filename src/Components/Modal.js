@@ -6,12 +6,30 @@ function Modal() {
 	return (
 		<div className={`${isModalOpen ? "modal-overlay show-modal" : "modal-overlay"}`}>
 			<div className="modal-container">
-				<form onSubmit={handleSubmit}>
+				<form className="form" onSubmit={handleSubmit}>
 					<label htmlFor="title">Title</label>
-					<input type="text" placeholder="Add title" id="title" ref={titleRef} />
+					<textarea
+						name="title"
+						className="input"
+						placeholder="Add title"
+						id="title"
+						ref={titleRef}
+						cols="30"
+						rows="5"
+					></textarea>
 					<label htmlFor="content">Content</label>
-					<input type="text" placeholder="Add content" id="content" ref={contentRef} />
-					<button type="submit">Post</button>
+					<textarea
+						name="content"
+						className="input"
+						placeholder="Add content"
+						id="content"
+						ref={contentRef}
+						cols="100"
+						rows="20"
+					></textarea>
+					<button type="submit" className="btn modal-btn">
+						Add Blog
+					</button>
 				</form>
 				<button className="close-modal-btn" onClick={closeModal}>
 					<FaTimes />
@@ -20,5 +38,4 @@ function Modal() {
 		</div>
 	);
 }
-
 export default Modal;

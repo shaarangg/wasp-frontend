@@ -173,9 +173,9 @@ label {
 .modal-container {
 	background-color: white;
 	border-radius: var(--radius);
-	width: 90vw;
-	height: 30vh;
-	max-width: var(--max-width);
+	width: 40vw;
+	height: 80vh;
+	max-width: 800px;
 	text-align: center;
 	display: grid;
 	place-items: center;
@@ -190,4 +190,7 @@ label {
 	border-color: transparent;
 	color: var(--highlight-color-dark);
 	cursor: pointer;
+}
+.modal-btn {
+	margin-top: 1rem;
 }
