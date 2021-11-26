@@ -1,11 +1,18 @@
 import React, { useState } from "react";
 import { FaShareAlt } from "react-icons/fa";
 import { GlobalContext } from "../context";
+import DOMPurify from "dompurify";
+
+
 function Blog({ title, author, content, CreatedAt }) {
 
 	let date = new Date(CreatedAt).toDateString();
 	date = date.slice(3);
 	const {sanitized, setSanitized} = GlobalContext();
+	const sanitize = () => {
+		content = DOMPurify.sanitize(content);
+	}
+
 	if (!sanitized){
 		return (
 			<article className="single-blog">
@@ -24,6 +31,7 @@ function Blog({ title, author, content, CreatedAt }) {
 		);
 	}
 	if (sanitized){
+		sanitize();
 		return (
 			<article className="single-blog">
 				<div className="blog-header">
