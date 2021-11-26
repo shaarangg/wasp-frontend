@@ -1,10 +1,13 @@
-import React, { useState, useContext, useRef, useEffect } from "react";
+import React, { useState, useContext, useRef } from "react";
 const AppContext = React.createContext();
+
 export function AppProvider({ children }) {
+	
 	const url = "http://localhost:8080/blogs";
 	const titleRef = useRef("");
 	const contentRef = useRef("");
 	const [blogs, setBlogs] = useState([]);
+	const [sanitized, setSanitized] = useState(false);
 	const [name, setName] = useState();
 	const [loading, setLoading] = useState(true);
 	const [isModalOpen, setIsModalOpen] = useState(false);
@@ -75,6 +78,8 @@ export function AppProvider({ children }) {
 				setName,
 				fetchBlogs,
 				disabled,
+				sanitized,
+				setSanitized
 			}}
 		>
 			{children}
