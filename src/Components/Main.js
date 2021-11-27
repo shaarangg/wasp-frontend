@@ -12,7 +12,7 @@ function Main() {
 	useEffect(() => {
 		const info = cookies.getAll();
 		if (!info["username"] || !info["password"]) {
-			history.push("/login");
+			history.push("/");
 		}
 		setName(info["username"]);
 		fetchBlogs();
